@@ -1,0 +1,2004 @@
+/* Основные стили в духе Confluence */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #172B4D;
+    background-color: #F4F5F7;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.sidebar {
+    width: 300px;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0; /* Для правильного сжатия flex-элемента */
+}
+
+.content {
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+/* Стили для оглавления в начале статьи */
+.article-toc {
+    background: #F8F9FA;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.toc-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #172B4D;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toc-header::before {
+    content: "📑";
+    font-size: 14px;
+}
+
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-item {
+    margin: 4px 0;
+}
+
+.toc-link {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #42526E;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s ease;
+    font-size: 14px;
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+}
+
+.toc-link:hover {
+    background-color: #F4F5F7;
+    color: #0052CC;
+    border-left-color: #0052CC;
+}
+
+.toc-link.active {
+    background-color: #DEEBFF;
+    color: #0052CC;
+    font-weight: 500;
+    border-left-color: #0052CC;
+}
+
+/* Отступы для вложенных уровней */
+.toc-level-1 { 
+    padding-left: 12px;
+    font-weight: 600;
+    color: #172B4D;
+}
+
+.toc-level-2 { padding-left: 24px; }
+
+.toc-level-3 { padding-left: 36px; }
+
+.toc-level-4 { 
+    padding-left: 48px; 
+    font-size: 13px;
+    color: #5E6C84;
+}
+
+/* Компактный вариант оглавления */
+.toc-compact .toc-link {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Стили для контента */
+h1 {
+    color: #172B4D;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+h2 {
+    color: #172B4D;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 32px 0 16px 0;
+}
+
+h3 {
+    color: #172B4D;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 12px 0;
+}
+
+h4 {
+    color: #42526E;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+p {
+    margin-bottom: 16px;
+    color: #42526E;
+}
+
+/* Стили для сайдбара с деревом страниц */
+.sidebar-tree {
+    font-size: 14px;
+}
+
+.tree-header {
+    font-weight: 600;
+    color: #172B4D;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.tree-item {
+    margin: 2px 0;
+}
+
+.tree-folder {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+    color: #172B4D;
+}
+
+.tree-folder:hover {
+    background-color: #F4F5F7;
+}
+
+.tree-folder-icon {
+    font-size: 12px;
+    width: 16px;
+    text-align: center;
+}
+
+.tree-folder-name {
+    flex: 1;
+}
+
+.tree-children {
+    margin-left: 16px;
+    border-left: 1px solid #DFE1E6;
+    padding-left: 8px;
+}
+
+.tree-link {
+    color: #42526E;
+    text-decoration: none;
+    display: block;
+    padding: 6px 8px 6px 22px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    position: relative;
+}
+
+.tree-link:hover {
+    background-color: #F4F5F7;
+    color: #0052CC;
+}
+
+.tree-link.active {
+    background-color: #DEEBFF;
+    color: #0052CC;
+    font-weight: 500;
+}
+
+.tree-link::before {
+    content: "📄";
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+/* Стили для таблицы */
+.confluence-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.confluence-table caption {
+    font-size: 16px;
+    font-weight: 600;
+    color: #172B4D;
+    text-align: left;
+    margin-bottom: 12px;
+    padding: 0;
+}
+
+.confluence-table th {
+    background-color: #F4F5F7;
+    color: #42526E;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid #DFE1E6;
+    font-size: 13px;
+}
+
+.confluence-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #DFE1E6;
+    vertical-align: top;
+    background-color: white;
+}
+
+.confluence-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.confluence-table tbody tr:hover td {
+    background-color: #F8F9FA;
+}
+
+.confluence-table a {
+    color: #0052CC;
+    text-decoration: none;
+}
+
+.confluence-table a:hover {
+    text-decoration: underline;
+}
+
+.confluence-table p {
+    margin: 4px 0;
+    color: #42526E;
+    font-size: 14px;
+}
+
+/* Стили для статусных чипов */
+.status-chip {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-approved {
+    background-color: #E3FCEF;
+    color: #006644;
+    border: 1px solid #ABF5D1;
+}
+
+.status-pending {
+    background-color: #DEEBFF;
+    color: #0052CC;
+    border: 1px solid #B3D4FF;
+}
+
+/* Кнопка "Вверх" */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0052CC;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background: #0747A6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top:active {
+    transform: translateY(0);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top::before {
+    content: "↑";
+}
+
+/* Стили для Use Case */
+.use-case-container {
+    background: #F8F9FA;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 24px;
+    margin: 20px 0;
+}
+
+.use-case-header {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.use-case-header h3 {
+    color: #0052CC;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.use-case-description {
+    color: #42526E;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.use-case-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: white;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.use-case-table th {
+    background-color: #F4F5F7;
+    color: #42526E;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #DFE1E6;
+    font-size: 14px;
+}
+
+.use-case-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #DFE1E6;
+    background-color: white;
+    color: #172B4D;
+}
+
+.scenario-title {
+    color: #172B4D;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.scenario-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+    background: white;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.scenario-table th {
+    background-color: #0052CC;
+    color: white;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.scenario-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #DFE1E6;
+    color: #172B4D;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.scenario-table tbody tr:nth-child(even) {
+    background-color: #FAFBFC;
+}
+
+.scenario-table tbody tr:hover {
+    background-color: #F4F5F7;
+}
+
+/* Стили для расширений */
+.extension-group {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: white;
+    border-radius: 3px;
+    border-left: 4px solid #FFAB00;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.extension-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.extension-step {
+    background: #FFAB00;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    min-width: 32px;
+    text-align: center;
+}
+
+.extension-condition {
+    color: #172B4D;
+    font-weight: 500;
+    flex: 1;
+    font-size: 14px;
+}
+
+.extension-content {
+    margin-left: 44px;
+}
+
+.platform-variant {
+    margin-bottom: 16px;
+    padding: 12px;
+    background: #FAFBFC;
+    border-radius: 3px;
+    border-left: 3px solid #B3D4FF;
+}
+
+.platform-variant:last-child {
+    margin-bottom: 0;
+}
+
+.platform-variant strong {
+    color: #0052CC;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.platform-variant ul {
+    margin: 8px 0 0 0;
+    padding-left: 20px;
+    color: #42526E;
+}
+
+.platform-variant li {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.platform-variant li:last-child {
+    margin-bottom: 0;
+}
+
+/* Стили для UML диаграммы */
+.uml-container {
+    background: #FFFFFF;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.uml-header {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.uml-header h3 {
+    color: #172B4D;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.uml-description {
+    color: #42526E;
+    font-size: 14px;
+    margin: 0;
+}
+
+.uml-diagram {
+    background: #FAFBFC;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+    text-align: center;
+    position: relative;
+}
+
+.uml-svg {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Улучшаем читаемость SVG */
+.uml-svg text {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.uml-svg .participant-head rect {
+    fill: #E6F2FF !important;
+    stroke: #0052CC !important;
+}
+
+.uml-svg .participant-head text {
+    fill: #172B4D !important;
+    font-weight: 500 !important;
+}
+
+.uml-svg .message text {
+    fill: #42526E !important;
+    font-size: 12px !important;
+}
+
+.uml-svg .message line {
+    stroke: #0052CC !important;
+}
+
+.uml-svg .message polygon {
+    fill: #0052CC !important;
+    stroke: #0052CC !important;
+}
+
+/* Подсветка альтернативных сценариев */
+.uml-svg rect[fill="#EEEEEE"] {
+    fill: #F8F9FA !important;
+    stroke: #DFE1E6 !important;
+}
+
+.uml-svg text[fill="#000000"] {
+    fill: #42526E !important;
+}
+
+/* Легенда диаграммы */
+.uml-legend {
+    background: #F8F9FA;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 16px;
+    margin-top: 20px;
+}
+
+.uml-legend h4 {
+    color: #172B4D;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+.legend-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid #DFE1E6;
+}
+
+.legend-color.success {
+    background: #E3FCEF;
+    border-color: #ABF5D1;
+}
+
+.legend-color.error {
+    background: #FFEBE6;
+    border-color: #FFBDAD;
+}
+
+.legend-color.timeout {
+    background: #FFF7E6;
+    border-color: #FFE380;
+}
+
+.legend-item span {
+    color: #42526E;
+    font-size: 13px;
+}
+
+/* Стили для блоков кода с Prism.js */
+.code-container {
+    background: #FFFFFF;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #F4F5F7;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.code-title {
+    color: #172B4D;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.code-language {
+    background: #0052CC;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.code-content {
+    position: relative;
+    background: #2D2D2D;
+    overflow-x: auto;
+}
+
+/* Переопределение стилей Prism.js для соответствия дизайну */
+.code-content pre[class*="language-"] {
+    margin: 0;
+    padding: 16px;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.code-content code[class*="language-"] {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    text-shadow: none;
+    background: transparent;
+}
+
+/* Стили для нумерации строк */
+.line-numbers .line-numbers-rows {
+    border-right: 1px solid #444;
+    padding-right: 1em;
+}
+
+.line-numbers-rows > span:before {
+    color: #6E7681;
+    font-size: 12px;
+}
+
+/* Стили для тулбара копирования */
+div.code-toolbar {
+    position: relative;
+}
+
+div.code-toolbar > .toolbar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+div.code-toolbar:hover > .toolbar {
+    opacity: 1;
+}
+
+div.code-toolbar > .toolbar .toolbar-item {
+    display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+    background: #0052CC;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+div.code-toolbar > .toolbar a:hover {
+    background: #0747A6;
+}
+
+/* Кастомные стили для PlantUML */
+.token.comment {
+    color: #6A9955;
+    font-style: italic;
+}
+
+.token.keyword {
+    color: #569CD6;
+    font-weight: bold;
+}
+
+.token.string {
+    color: #CE9178;
+}
+
+.token.function {
+    color: #DCDCAA;
+}
+
+.token.number {
+    color: #B5CEA8;
+}
+
+.token.operator {
+    color: #D4D4D4;
+}
+
+.token.punctuation {
+    color: #D4D4D4;
+}
+
+.token.selector {
+    color: #D7BA7D;
+}
+
+.token.property {
+    color: #9CDCFE;
+}
+
+.token.tag {
+    color: #569CD6;
+}
+
+.token.attr-name {
+    color: #9CDCFE;
+}
+
+.token.attr-value {
+    color: #CE9178;
+}
+
+.token.namespace {
+    color: #4EC9B0;
+}
+
+/* Специфичные стили для PlantUML */
+.language-plantuml .token.directive {
+    color: #C586C0;
+    font-weight: bold;
+}
+
+.language-plantuml .token.participant {
+    color: #4EC9B0;
+}
+
+.language-plantuml .token.actor {
+    color: #FFD700;
+}
+
+.language-plantuml .token.arrow {
+    color: #569CD6;
+    font-weight: bold;
+}
+
+.language-plantuml .token.activation {
+    color: #CE9178;
+    font-weight: bold;
+}
+
+.language-plantuml .token.alt {
+    color: #FF6B6B;
+    font-weight: bold;
+}
+
+.language-plantuml .token.group {
+    color: #FFA500;
+    font-weight: bold;
+}
+
+.language-plantuml .token.title {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.language-plantuml .token.note {
+    color: #6A9955;
+    font-style: italic;
+}
+
+/* Стили для скроллбара блока кода */
+.code-content::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+    background: #1E1E1E;
+}
+
+.code-content::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Стили для раздела скриптов */
+.scripts-container {
+    margin: 20px 0;
+}
+
+.script-section {
+    background: #FFFFFF;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.script-section h3 {
+    background: #F4F5F7;
+    color: #172B4D;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding: 16px 20px;
+    border-bottom: 1px solid #DFE1E6;
+}
+
+.script-content {
+    padding: 20px;
+}
+
+/* Стили для списков */
+.styled-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: script-counter;
+}
+
+.styled-list > li {
+    counter-increment: script-counter;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background: #FAFBFC;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    position: relative;
+    padding-left: 48px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.styled-list > li::before {
+    content: counter(script-counter);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0052CC;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Стили для вложенных списков */
+.nested-list {
+    margin: 12px 0 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: nested-counter;
+}
+
+.nested-list > li {
+    counter-increment: nested-counter;
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    background: #FFFFFF;
+    border: 1px solid #EBECF0;
+    border-radius: 3px;
+    position: relative;
+    padding-left: 36px;
+}
+
+.nested-list > li::before {
+    content: counter(nested-counter);
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6B778C;
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Стили для элементов скрипта */
+.script-field {
+    color: #0052CC;
+    font-weight: 600;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+}
+
+.script-value {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    margin: 0 4px;
+}
+
+.script-value.auto {
+    color: #FF6B6B;
+    font-weight: 600;
+}
+
+.script-value.string {
+    color: #00875A;
+    background: #E3FCEF;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #ABF5D1;
+}
+
+.script-value.object {
+    color: #6554C0;
+    background: #F4F5FF;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #C0B6F2;
+    font-weight: 500;
+}
+
+.script-comment {
+    color: #6B778C;
+    font-size: 12px;
+    font-style: italic;
+    margin-left: 8px;
+}
+
+.script-operator {
+    color: #FF6B6B;
+    font-weight: bold;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+/* Специфичные стили для сложных списков */
+.complex-list > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
+.multi-level > li {
+    display: block;
+}
+
+.multi-level .script-field,
+.multi-level .script-value,
+.multi-level .script-comment {
+    display: inline;
+}
+
+/* Эффекты при наведении */
+.styled-list > li:hover {
+    background: #F4F5F7;
+    border-color: #B3BAC5;
+}
+
+.nested-list > li:hover {
+    background: #FAFBFC;
+    border-color: #DFE1E6;
+}
+
+/* Стили для Jira issue */
+.jira-issue-container {
+    background: #FFFFFF;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.jira-issue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.jira-issue-key {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0052CC;
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jira-issue-key:hover {
+    background: #0747A6;
+    box-shadow: 0 2px 8px rgba(0, 82, 204, 0.3);
+}
+
+.jira-icon {
+    font-size: 12px;
+}
+
+.jira-summary {
+    color: #172B4D;
+    font-weight: 500;
+    flex: 1;
+    min-width: 200px;
+}
+
+.jira-status {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.jira-status-published {
+    background: #E3FCEF;
+    color: #006644;
+    border: 1px solid #ABF5D1;
+}
+
+.jira-status-in-progress {
+    background: #DEEBFF;
+    color: #0052CC;
+    border: 1px solid #B3D4FF;
+}
+
+.jira-status-done {
+    background: #E3FCEF;
+    color: #006644;
+    border: 1px solid #ABF5D1;
+}
+
+.jira-status-todo {
+    background: #DFE1E6;
+    color: #42526E;
+    border: 1px solid #C1C7D0;
+}
+
+.jira-status-review {
+    background: #FFF7E6;
+    color: #FF8B00;
+    border: 1px solid #FFE380;
+}
+
+/* Стили для макросов Confluence */
+.confluence-macro {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 3px;
+    border-left: 4px solid;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #DFE1E6;
+    border-top: 1px solid #DFE1E6;
+    border-bottom: 1px solid #DFE1E6;
+    transition: box-shadow 0.2s ease
+}
+
+.macro-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.macro-content {
+    flex: 1;
+}
+
+.macro-content strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.macro-content p {
+    margin: 0;
+    color: #42526E;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.macro-content p:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.macro-content code {
+    background: #F4F5F7;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #DFE1E6;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #172B4D;
+}
+
+/* Стили для разных типов макросов */
+.confluence-macro.info {
+    border-left-color: #0052CC;
+    background: #F0F7FF;
+}
+
+.confluence-macro.info .macro-content strong {
+    color: #0052CC;
+}
+
+.confluence-macro.warning {
+    border-left-color: #FF8B00;
+    background: #FFF7E6;
+}
+
+.confluence-macro.warning .macro-content strong {
+    color: #FF8B00;
+}
+
+.confluence-macro.note {
+    border-left-color: #6554C0;
+    background: #F4F5FF;
+}
+
+.confluence-macro.note .macro-content strong {
+    color: #6554C0;
+}
+
+.confluence-macro.tip {
+    border-left-color: #00875A;
+    background: #E3FCEF;
+}
+
+.confluence-macro.tip .macro-content strong {
+    color: #00875A;
+}
+
+/* Дополнительные варианты макросов */
+.confluence-macro.success {
+    border-left-color: #00875A;
+    background: #E3FCEF;
+}
+
+.confluence-macro.success .macro-content strong {
+    color: #00875A;
+}
+
+.confluence-macro.error {
+    border-left-color: #DE350B;
+    background: #FFEBE6;
+}
+
+.confluence-macro.error .macro-content strong {
+    color: #DE350B;
+}
+
+/* Стили для вложенных элементов в макросах */
+.macro-content ul,
+.macro-content ol {
+    margin: 8px 0;
+    padding-left: 20px;
+    color: #42526E;
+}
+
+.macro-content li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+}
+
+.macro-content a {
+    color: #0052CC;
+    text-decoration: none;
+}
+
+.macro-content a:hover {
+    text-decoration: underline;
+}
+
+/* Эффекты при наведении */
+.confluence-macro:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для сложного алгоритма */
+.complex-algorithm {
+    background: #FFFFFF;
+    border: 1px solid #DFE1E6;
+    border-radius: 3px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.algorithm-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: algorithm-counter;
+}
+
+.algorithm-list > li {
+    counter-increment: algorithm-counter;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.algorithm-text {
+    display: block;
+    color: #172B4D;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 32px;
+}
+
+/* Стили для разных уровней вложенности */
+.algorithm-list.level-1 > li::before {
+    content: counter(algorithm-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #0052CC;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.algorithm-list.level-2 {
+    counter-reset: algorithm-counter-2;
+    margin: 12px 0 12px 20px;
+    padding-left: 12px;
+    border-left: 2px solid #EBECF0;
+}
+
+.algorithm-list.level-2 > li {
+    counter-increment: algorithm-counter-2;
+}
+
+.algorithm-list.level-2 > li::before {
+    content: counter(algorithm-counter) "." counter(algorithm-counter-2);
+    position: absolute;
+    left: -32px;
+    top: 0;
+    background: #4C9AFF;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.algorithm-list.level-3 {
+    counter-reset: algorithm-counter-3;
+    margin: 8px 0 8px 20px;
+    padding-left: 12px;
+    border-left: 2px solid #F4F5F7;
+}
+
+.algorithm-list.level-3 > li {
+    counter-increment: algorithm-counter-3;
+}
+
+.algorithm-list.level-3 > li::before {
+    content: counter(algorithm-counter) "." counter(algorithm-counter-2) "." counter(algorithm-counter-3);
+    position: absolute;
+    left: -32px;
+    top: 0;
+    background: #79F2C0;
+    color: #006644;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.algorithm-list.level-4 {
+    counter-reset: algorithm-counter-4;
+    margin: 6px 0 6px 20px;
+    padding-left: 12px;
+    border-left: 2px solid #F4F5F7;
+}
+
+.algorithm-list.level-4 > li {
+    counter-increment: algorithm-counter-4;
+}
+
+.algorithm-list.level-4 > li::before {
+    content: counter(algorithm-counter) "." counter(algorithm-counter-2) "." counter(algorithm-counter-3) "." counter(algorithm-counter-4);
+    position: absolute;
+    left: -32px;
+    top: 0;
+    background: #FFFFFF;
+    color: #42526E;
+    border: 1px solid #DFE1E6;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 600;
+}
+
+/* Стили для элементов внутри алгоритма */
+.algorithm-text strong {
+    color: #0052CC;
+    font-weight: 600;
+}
+
+.algorithm-text code {
+    background: #F4F5F7;
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid #DFE1E6;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #172B4D;
+    margin: 0 2px;
+}
+
+.algorithm-text code.object {
+    background: #F4F5FF;
+    border-color: #C0B6F2;
+    color: #6554C0;
+}
+
+/* Эффекты при наведении */
+.algorithm-list > li .algorithm-text {
+    transition: background-color 0.2s ease;
+}
+
+.algorithm-list > li:hover .algorithm-text {
+    background: #F8F9FA;
+}
+
+.algorithm-list.level-1 > li:hover::before {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Подсветка условий */
+.algorithm-condition {
+    background: #FFF7E6;
+    border: 1px solid #FFE380;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    font-size: 13px;
+    color: #172B4D;
+}
+
+.algorithm-condition code {
+    background: #FFFAE6;
+    border-color: #FFD580;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        width: auto;
+        position: static;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .confluence-table {
+        font-size: 12px;
+    }
+    
+    .confluence-table th,
+    .confluence-table td {
+        padding: 8px 12px;
+    }
+    /* Адаптивность для Use Case */
+    .use-case-container {
+        padding: 16px;
+    }
+    
+    .scenario-table th,
+    .scenario-table td {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    
+    .extension-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .extension-content {
+        margin-left: 0;
+    }
+    
+    .platform-variant {
+        padding: 10px;
+    }
+
+    /* Адаптивность для UML диаграммы */
+    .uml-container {
+        padding: 16px;
+    }
+    
+    .uml-diagram {
+        padding: 12px;
+    }
+    
+    .legend-items {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .uml-svg {
+        min-width: 800px; /* Минимальная ширина для читаемости */
+    }
+
+    /* Адаптивность для блоков кода */
+    .code-header {
+        padding: 10px 12px;
+    }
+    
+    .code-title {
+        font-size: 13px;
+    }
+    
+    .code-language {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+    
+    .code-content pre[class*="language-"] {
+        padding: 12px;
+    }
+    
+    .code-content code[class*="language-"] {
+        font-size: 12px;
+    }
+
+    /* Адаптивность для скриптов */
+    .script-section h3 {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+    
+    .script-content {
+        padding: 16px;
+    }
+    
+    .styled-list > li {
+        padding: 10px 12px 10px 44px;
+        margin-bottom: 8px;
+    }
+    
+    .styled-list > li::before {
+        left: 12px;
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    
+    .nested-list > li {
+        padding: 6px 8px 6px 32px;
+        margin-bottom: 6px;
+    }
+    
+    .nested-list > li::before {
+        left: 8px;
+        width: 16px;
+        height: 16px;
+        font-size: 9px;
+    }
+    
+    .script-field,
+    .script-value {
+        font-size: 12px;
+    }
+    
+    .script-comment {
+        font-size: 11px;
+    }
+    
+    .complex-list > li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Адаптивность для Jira issue */
+    .jira-issue-container {
+        padding: 12px 16px;
+    }
+    
+    .jira-issue {
+        gap: 6px;
+        font-size: 13px;
+    }
+    
+    .jira-issue-key {
+        padding: 3px 6px;
+        font-size: 12px;
+    }
+    
+    .jira-summary {
+        min-width: 150px;
+    }
+    
+    .jira-status {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    /* Адаптивность для макросов */
+    .confluence-macro {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    .macro-icon {
+        font-size: 14px;
+    }
+    
+    .macro-content strong {
+        font-size: 13px;
+    }
+    
+    .macro-content p {
+        font-size: 13px;
+    }
+    
+    .macro-content code {
+        font-size: 12px;
+        padding: 1px 4px;
+    }
+
+    /* Адаптивность для алгоритма */
+    .complex-algorithm {
+        padding: 16px;
+    }
+    
+    .algorithm-text {
+        font-size: 13px;
+        padding-left: 28px;
+    }
+    
+    .algorithm-list.level-1 > li::before {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+    
+    .algorithm-list.level-2 {
+        margin-left: 16px;
+        padding-left: 8px;
+    }
+    
+    .algorithm-list.level-2 > li::before {
+        left: -24px;
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+    }
+    
+    .algorithm-list.level-3 > li::before {
+        left: -24px;
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+    }
+    
+    .algorithm-list.level-4 > li::before {
+        left: -24px;
+        width: 14px;
+        height: 14px;
+        font-size: 7px;
+    }
+    
+    .algorithm-text code {
+        font-size: 12px;
+        padding: 1px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .article-toc {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 17px;
+    }
+    
+    .confluence-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Адаптивность для Use Case */
+    .use-case-container {
+        padding: 12px;
+    }
+    
+    .scenario-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .extension-group {
+        padding: 12px;
+    }
+
+    /* Адаптивность для UML диаграммы */
+    .uml-container {
+        padding: 12px;
+    }
+    
+    .uml-header h3 {
+        font-size: 16px;
+    }
+    
+    .uml-description {
+        font-size: 13px;
+    }
+
+    /* Адаптивность для блоков кода */
+    .code-header {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    
+    .code-language {
+        align-self: flex-start;
+    }
+    
+    .code-content pre[class*="language-"] {
+        padding: 8px;
+    }
+    
+    .code-content code[class*="language-"] {
+        font-size: 11px;
+    }
+    
+    div.code-toolbar > .toolbar {
+        position: relative;
+        top: 0;
+        right: 0;
+        opacity: 1;
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    /* Адаптивность для скриптов */
+    .script-section h3 {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .script-content {
+        padding: 12px;
+    }
+    
+    .styled-list > li {
+        padding: 8px 10px 8px 40px;
+    }
+    
+    .styled-list > li::before {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+    
+    .script-field,
+    .script-value {
+        font-size: 11px;
+    }
+    
+    .multi-level > li {
+        line-height: 1.6;
+    }
+    
+    /* Адаптивность для Jira issue */
+    .jira-issue-container {
+        padding: 10px 12px;
+    }
+    
+    .jira-issue {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .jira-issue-key {
+        align-self: flex-start;
+    }
+    
+    .jira-summary {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .jira-status {
+        align-self: flex-start;
+    }
+
+    /* Адаптивность для макросов */
+    .confluence-macro {
+        padding: 10px 12px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .macro-icon {
+        margin-top: 0;
+    }
+    
+    .macro-content {
+        width: 100%;
+    }
+
+    /* Адаптивность для алгоритма */
+    .complex-algorithm {
+        padding: 12px;
+    }
+    
+    .algorithm-text {
+        font-size: 12px;
+        padding-left: 24px;
+        line-height: 1.5;
+    }
+    
+    .algorithm-list.level-1 > li::before {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+    }
+    
+    .algorithm-list.level-2,
+    .algorithm-list.level-3,
+    .algorithm-list.level-4 {
+        margin-left: 12px;
+        padding-left: 6px;
+    }
+    
+    .algorithm-list.level-2 > li::before {
+        left: -18px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .algorithm-list.level-3 > li::before {
+        left: -18px;
+        width: 14px;
+        height: 14px;
+    }
+    
+    .algorithm-list.level-4 > li::before {
+        left: -18px;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Улучшения для лучшей читаемости диаграммы */
+.uml-diagram::-webkit-scrollbar {
+    height: 8px;
+}
+
+.uml-diagram::-webkit-scrollbar-track {
+    background: #F4F5F7;
+    border-radius: 4px;
+}
+
+.uml-diagram::-webkit-scrollbar-thumb {
+    background: #DFE1E6;
+    border-radius: 4px;
+}
+
+.uml-diagram::-webkit-scrollbar-thumb:hover {
+    background: #B3BAC5;
+}
+
+/* Дополнительные стили для статусов Jira (можно использовать для других задач) */
+.jira-issue-mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F4F5F7;
+    padding: 4px 8px;
+    border-radius: 3px;
+    border: 1px solid #DFE1E6;
+    font-size: 12px;
+    text-decoration: none;
+    color: #42526E;
+    transition: all 0.2s ease;
+}
+
+.jira-issue-mini:hover {
+    background: #EBECF0;
+    border-color: #B3BAC5;
+    text-decoration: none;
+    color: #172B4D;
+}
+
+.jira-issue-mini .jira-icon {
+    font-size: 11px;
+}
+
+.jira-issue-mini .jira-status {
+    font-size: 9px;
+    padding: 1px 4px;
+}
+
+/* Компактная версия макросов */
+.confluence-macro.compact {
+    padding: 12px 16px;
+}
+
+.confluence-macro.compact .macro-icon {
+    font-size: 14px;
+}
+
+.confluence-macro.compact .macro-content strong {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.confluence-macro.compact .macro-content p {
+    font-size: 13px;
+}

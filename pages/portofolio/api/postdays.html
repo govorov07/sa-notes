@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST api/v3/events/days</title>
+    <meta name="description" content="Эндпоинт для запроса типов фильтров POST api/v3/events/days">
+	<meta name="keywords" content="REST, API, POST, events, filters, days, method, endpoint">
+	<meta name="author" content="Govorov Andrew">
+
+	<link rel="stylesheet" href="../../../assets/styles/styles.css">
+	
+	<!-- Prism.js CSS -->
+	<link rel="stylesheet" href="../../../assets/styles/prism.css">
+</head>
+
+<body>
+	<div class="container">
+		<!-- Сайдбар с деревом страниц -->
+		<aside class="sidebar">
+			<div class="sidebar-tree">
+				<div class="tree-header">Дерево страниц</div>
+				<div class="tree-item">
+					<div class="tree-folder">
+						<span class="tree-folder-icon">📁</span>
+						<span class="tree-folder-name">Говоров Андрей Сергеевич</span>
+					</div>
+					<div class="tree-children">
+						<div class="tree-item">
+							<a href="../../../pages/govorov/about.html" class="tree-link">Обо мне</a>
+						</div>
+						<div class="tree-item">
+							<a href="../../../pages/govorov/cv.html" class="tree-link">Резюме</a>
+						</div>
+					</div>
+				</div>
+				<div class="tree-item">
+					<div class="tree-folder">
+						<span class="tree-folder-icon">📁</span>
+						<span class="tree-folder-name">Портфолио</span>
+					</div>
+					<div class="tree-children">
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">Требования</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/requirements/rfilters.html" class="tree-link">Требования к фильтрации событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">Спецификации</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/specifications/sfilters.html" class="tree-link">Спецификация. Фильтрация событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">База данных</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/events_groups.html" class="tree-link">Группы событий</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/event_types.html" class="tree-link">Типы событий</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/event_types_groups.html" class="tree-link">Группы-типы событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">REST API</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/postevents.html" class="tree-link">POST api/v3/events</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/getfilters.html" class="tree-link">GET api/v3/events/filters</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/postdays.html" class="tree-link active">POST api/v3/events/days</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		
+		<!-- Основной контент -->
+		<main class="main-content">
+			<h1 id="section-1">POST api/v3/events/days</h1>
+
+			<!-- Оглавление статьи -->
+			<nav class="article-toc" id="articleToc">
+				<div class="toc-header">На этой странице</div>
+				<ul class="toc-list" id="toc">
+					<!-- Оглавление генерируется автоматически -->
+				</ul>
+			</nav>
+
+			<!-- Контент статьи -->
+			<article class="content">
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	История изменений																										-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-2">История изменений</h1>
+				<div>
+					<!-- Таблица истории изменений -->
+					<table class="confluence-table">
+						<caption>История изменений метода</caption>
+						<thead>
+							<tr>
+								<th>Версия</th>
+								<th>Автор</th>
+								<th>Дата изменений</th>
+								<th>Описание изменений</th>
+								<th>Ссылка на задачу</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>v.1.0</td>
+								<td><a href="../../../pages/govorov/about.html">Говоров Андрей</a></td>
+								<td>16.10.2023</td>
+								<td>
+									<p>Исходная страница</p>
+								</td>
+								<td>
+									<div class="jira-issue-container">
+										<span class="jira-issue">
+											<a href="https://jira.example.com/browse/B2C-32519" class="jira-issue-key" target="_blank">
+												<span class="jira-icon">📋</span>
+												<span style="color: white;">B2C-32519</span>
+											</a>
+											-
+											<span class="jira-summary">
+												[back] Реализовать метод запроса дат, в которые происходили события
+											</span>
+											<span class="jira-status jira-status-published">
+												ОПУБЛИКОВАНО
+											</span>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Метод																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-3">Метод</h1>
+				<div>
+					<table class="confluence-table">
+						<tbody>
+							<tr>
+								<th>Назначение</th>
+								<td>Запрос дат, в которые происходили события с учётом текущего фильтра</td>
+							</tr>
+							<tr>
+								<th>Статус</th>
+								<td>ACTIVE</td>
+							</tr>
+							<tr>
+								<th>HTTP-метод</th>
+								<td>POST</td>
+							</tr>
+							<tr>
+								<th>URL</th>
+								<td>api/v3/events/days</td>
+							</tr>
+							<tr>
+								<th>Swagger</th>
+								<td><a href="" target="_blank">post_events_days</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Запрос																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-4">Запрос</h1>
+				<div>
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Параметры запроса																									-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-5">Параметры запроса</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th>Название параметра</th>
+									<th>Описание</th>
+									<th>Тип</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия параметра</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="5">Отсутствуют</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Тело запроса																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-6">Тело запроса</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th>Название параметра</th>
+									<th>Описание</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия параметра</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>groups</td>
+									<td>
+										<p>Фильтрация по группе событий</p>
+										<p>(id группы из БД events_groups)</p>
+									</td>
+									<td>Array</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td>event_types</td>
+									<td>
+										<p>Фильтрация по типу события</p>
+										<p>(id типа события из БД event_types)</p>
+									</td>
+									<td>Array</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td>devices</td>
+									<td>Список id устройств для отбора событий</td>
+									<td>Array</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td>timezone</td>
+									<td>Часовой пояс дома</td>
+									<td>varchar</td>
+									<td>Да</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Пример запроса																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-7">Пример запроса</h2>
+					<div>
+						<!-- Блок кода JSON -->
+						<div class="code-container">
+							<div class="code-header">
+								<span class="code-title">Пример запроса по умолчанию</span>
+								<div class="code-language">JSON</div>
+							</div>
+							<div>
+								<pre><code class="language-json">
+									{
+										"groups": [],
+										"devices": [],
+										"event_types": [],
+										"timezone": "Europe/Moscow"
+									}
+								</code></pre>
+							</div>
+						</div>
+						<!-- Блок кода JSON -->
+						<div class="code-container">
+							<div class="code-header">
+								<span class="code-title">Пример запроса с фильтрацией</span>
+								<div class="code-language">JSON</div>
+							</div>
+							<div>
+								<pre><code class="language-json">
+									{
+										"groups": [5],
+										"devices": [1300028],
+										"event_types": [2,4],
+										"timezone": "Asia/Kamchatka"
+									}
+								</code></pre>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Ответ																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-8">Ответ</h1>
+				<div>
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Код успешного ответа																								-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-9">Код успешного ответа</h2>
+					<div>
+						<table class="confluence-table">
+							<tbody>
+								<tr>
+									<th>200</th>
+									<td>ОК</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Структура ответа																									-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-10">Структура ответа</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th >Название элемента</th>
+									<th>Описание</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия элемента</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>days</td>
+									<td>Массив дней, в которых зафиксированы события указанные в фильтре</td>
+									<td>Array</td>
+									<td>Нет</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Пример ответа																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-11">Пример ответа</h2>
+					<div>
+						<!-- Блок кода JSON -->
+						<div class="code-container">
+							<div class="code-header">
+								<span class="code-title">Ответ на запрос POST api/v3/events/days</span>
+								<div class="code-language">JSON</div>
+							</div>
+							<div>
+								<pre><code class="language-json">
+									{
+										"days": [
+											"2023-01-01",
+											"2023-02-23",
+											"2023-03-08"
+										]
+									}
+								</code></pre>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Возможные ошибки																										-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-12">Возможные ошибки</h1>
+				<div>
+					<!-- Блок примечания -->
+					<div class="confluence-macro info">
+						<div class="macro-icon">💡</div>
+						<div class="macro-content">
+							<strong>Информация</strong>
+							<p>Полный список ошибок: <a href="">Коды ошибок</a></p>
+						</div>
+					</div>
+					<table class="confluence-table">
+						<caption>Список ошибок</caption>
+						<thead>
+							<tr>
+								<th>Код ответа</th>
+								<th>Тело ответа</th>
+								<th>Описание</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>404</td>
+								<td>
+									<div class="code-container">
+										<div>
+											<pre><code class="language-json">
+												{
+													"code": 404025,
+													"message": "Указанный фильтр не существует"
+												}
+											</code></pre>
+										</div>
+									</div>
+								</td>
+								<td>
+									<ul>
+										<li>Массив groups в запросе содержит несуществующие id</li>
+										<li>Массив devices в запросе содержит несуществующие или чужие id</li>
+										<li>Массив event_types в запросе содержит несуществующие id</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td>424</td>
+								<td>
+									<div class="code-container">
+										<div>
+											<pre><code class="language-json">
+												{
+													"code": 424008,
+													"message": "Не удалось получить список событий"
+												}
+											</code></pre>
+										</div>
+									</div>
+								</td>
+								<td>Estore не отвечает, либо возвращает ошибку</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Логика работы																											-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-13">Логика работы</h1>
+				<div>
+					<!-- Блок логики -->
+					<div class="complex-algorithm">
+						<ol class="algorithm-list level-1">
+							<li><span class="algorithm-text">Бэк получает запрос <strong>POST api/v3/events/days</strong> и считывает параметры фильтрации</span>
+								<ol class="algorithm-list level-2">
+									<li><span class="algorithm-text">Если массив <code>groups[]</code>, <code>devices[]</code>
+										и <code>event_types[]</code> пустые, то запрос дат выполняется по всем событиям.</span></li>
+									<li><span class="algorithm-text">Если массив <code>groups[]</code> заполнен, то по полученным id бэк находит
+										все события, где в join-таблице <strong>event_types_groups</strong> параметр <code>event_group_id</code>
+										равен полученному id.</span></li>
+									<li><span class="algorithm-text">Если массив <code>devices[]</code> заполнен, то по полученным id бэк находит
+										uuid'ы устройств и формирует с ними запрос в EStore.</span></li>
+									<li><span class="algorithm-text">Если массив <code>event_types[]</code> заполнен, то подготавливаются параметры
+										запроса дат по всем событиям, выбранным в данном фильтре.</span></li>
+								</ol>
+							</li>
+							<li>
+								<span class="algorithm-text">Если клиент не передал <code>timezone</code>, то определить его на основе значения timezone у сущности Дом</span>
+							</li>
+							<li><span class="algorithm-text">С учётом параметров выше бек формирует и выполняет запрос в EStore <code>POST /api/estore/events/days/query</code></span>
+								<ol class="algorithm-list level-2">
+									<li><span class="algorithm-text">В <code>device_uuids</code> передаётся <code>uuid</code> источников событий. В противоречие к названию параметра источниками событий могут быть не только девайсы. Там может быть передан, например, и <code>users.estore_uuids</code>.</span></li>
+									<li><span class="algorithm-text">Для передачи параметра <code>utc_offset</code> необходимо перевести значение <code>timezone</code> в числовое смещение времени относительно UTC в минутах.</span></li>
+									<li><span class="algorithm-text">События должны запрашиваться и по удалённым устройствам.</span></li>
+								</ol>
+							</li>
+							<li>
+								<span class="algorithm-text">Полученный ответ возвращается на фронт</span>
+							</li>
+						</ol>
+					</div>
+
+					<!-- Блок кода SQL -->
+					<div class="code-container">
+						<div class="code-header">
+							<span class="code-title">Запрос фильтров</span>
+							<div class="code-language">SQL</div>
+						</div>
+						<div>
+							<pre><code class="language-sql">
+								WITH
+								-- Получаем временную зону дома
+								house_timezone AS (
+									SELECT
+										COALESCE(
+											:timezone,
+											(SELECT timezone FROM houses WHERE user_id = :user_id AND deleted_at IS NULL LIMIT 1),
+											'UTC'
+										) AS timezone
+								),
+								-- Конвертируем временную зону в смещение в минутах
+								timezone_offset AS (
+									SELECT
+										EXTRACT(EPOCH FROM (NOW() AT TIME ZONE timezone - NOW() AT TIME ZONE 'UTC')) / 60 AS utc_offset_minutes
+									FROM house_timezone
+								),
+								-- Получаем группы событий если фильтр groups[] заполнен
+								event_groups_filter AS (
+									SELECT
+										DISTINCT et.id AS event_type_id
+									FROM event_type_groups etg
+									INNER JOIN event_types et ON et.id = etg.event_type_id AND et.deleted_at IS NULL
+									WHERE etg.event_group_id = ANY(:groups::int[])
+										AND etg.deleted_at IS NULL
+								),
+								-- Получаем UUID устройств если фильтр devices[] заполнен
+								devices_uuids_filter AS (
+									SELECT
+										uuid
+									FROM devices
+									WHERE id = ANY(:devices::int[])
+										AND user_id = :user_id
+										AND deleted_at IS NULL
+					
+									UNION ALL
+					
+									SELECT
+										uuid
+									FROM cameras
+									WHERE id = ANY(:devices::int[])
+										AND user_id = :user_id
+										AND deleted_at IS NULL
+					
+									UNION ALL
+					
+									SELECT
+										uuid
+									FROM controllers
+									WHERE id = ANY(:devices::int[])
+										AND user_id = :user_id
+										AND deleted_at IS NULL
+								),
+								-- Получаем UUID пользователя для финансовых событий
+								user_estore_uuid AS (
+									SELECT estore_uuid
+									FROM users
+									WHERE id = :user_id
+										AND deleted_at IS NULL
+								),
+								-- Формируем список всех UUID для запроса в EStore
+								all_estore_uuids AS (
+									-- UUID устройств если есть фильтр devices[]
+									SELECT uuid FROM devices_uuids_filter
+					
+									UNION ALL
+					
+									-- UUID пользователя для финансовых событий (всегда добавляем)
+									SELECT estore_uuid FROM user_estore_uuid
+								),
+								-- Формируем список event_type_id для фильтрации
+								event_types_filter AS (
+									-- Если передан фильтр groups[], берем event_type_id из групп
+									SELECT event_type_id FROM event_groups_filter
+									WHERE array_length(:groups::int[], 1) > 0
+					
+									UNION
+					
+									-- Если передан фильтр event_types[], берем их напрямую
+									SELECT unnest(:event_types::int[]) AS event_type_id
+									WHERE array_length(:event_types::int[], 1) > 0
+								),
+								-- Формируем финальный список event_type_id
+								final_event_types AS (
+									SELECT
+										CASE
+											-- Если есть явные фильтры по группам или типам - используем их
+											WHEN EXISTS (SELECT 1 FROM event_types_filter) THEN
+												(SELECT ARRAY_AGG(DISTINCT event_type_id) FROM event_types_filter)
+											-- Иначе берем все event_types
+											ELSE
+												(SELECT ARRAY_AGG(id) FROM event_types WHERE deleted_at IS NULL)
+										END AS event_type_ids
+								),
+								-- Формируем параметры для запроса в EStore
+								estore_params AS (
+									SELECT
+										-- UUID устройств и пользователя
+										CASE
+											WHEN array_length(:devices::int[], 1) > 0 THEN
+												(SELECT ARRAY_AGG(DISTINCT uuid) FROM all_estore_uuids)
+											ELSE
+												-- Если devices[] пустой, получаем все устройства пользователя
+												(
+													SELECT ARRAY_AGG(DISTINCT uuid) FROM (
+														SELECT uuid FROM devices WHERE user_id = :user_id AND deleted_at IS NULL
+														UNION ALL
+														SELECT uuid FROM cameras WHERE user_id = :user_id AND deleted_at IS NULL
+														UNION ALL
+														SELECT uuid FROM controllers WHERE user_id = :user_id AND deleted_at IS NULL
+														UNION ALL
+														SELECT estore_uuid FROM user_estore_uuid
+													) AS all_uuids
+												)
+										END AS device_uuids,
+					
+										-- Event types
+										(SELECT event_type_ids FROM final_event_types) AS event_types,
+					
+										-- UTC offset в минутах
+										(SELECT utc_offset_minutes FROM timezone_offset) AS utc_offset
+								)
+								-- Финальный результат с параметрами для EStore
+								SELECT
+									json_build_object(
+										'device_uuids', COALESCE(ep.device_uuids, ARRAY[]::text[]),
+										'event_types', COALESCE(ep.event_types, ARRAY[]::int[]),
+										'utc_offset', ep.utc_offset,
+										'include_deleted', true  -- События по удаленным устройствам
+									) AS estore_query_params
+								FROM estore_params ep;
+							</code></pre>
+						</div>
+					</div>
+
+					<!-- Блок кода SQL -->
+					<div class="code-container">
+						<div class="code-header">
+							<span class="code-title">Запрос дат</span>
+							<div class="code-language">SQL</div>
+						</div>
+						<div>
+							<pre><code class="language-sql">
+								-- Предполагая, что у вас есть функция для вызова EStore
+								SELECT * FROM estore_query_events_days(
+									(SELECT estore_query_params FROM main_query)
+								);
+							</code></pre>
+						</div>
+					</div>
+
+					<p><strong>Пояснения к логике:</strong></p>
+					<ol>
+						<li><strong>Временная зона</strong> - определяется из параметра или дома пользователя, конвертируется в смещение в минутах</li>
+						<li><strong>Фильтр groups[]</strong> - находит все event_type_id, связанные с выбранными группами</li>
+						<li><strong>Фильтр devices[]</strong> - получает UUID выбранных устройств (проверяя принадлежность пользователю)</li>
+						<li><strong>Фильтр event_types[]</strong> - использует переданные ID типов событий напрямую</li>
+						<li><strong>UUID пользователя</strong> - всегда добавляется для финансовых событий</li>
+						<li><strong>Удаленные устройства</strong> - параметр include_deleted: true обеспечивает включение событий по удаленным устройствам</li>
+					</ol>
+					<p>Запрос безопасно обрабатывает все комбинации фильтров и возвращает готовые параметры для EStore.</p>
+				</div>
+			</article>
+		</main>
+	</div>
+
+	<!-- Кнопка "Вверх" -->
+	<button class="scroll-to-top" id="scrollToTop" aria-label="Вернуться к началу страницы"></button>
+	
+	<script src="../../../assets/scripts/prism.js"></script>
+	<script src="../../../assets/scripts/script.js"></script>
+</body>
+</html>

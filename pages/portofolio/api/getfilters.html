@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET api/v3/events/filters</title>
+    <meta name="description" content="Эндпоинт для запроса типов фильтров GET api/v3/events/filters">
+	<meta name="keywords" content="REST, API, GET, events, filters, method, endpoint">
+	<meta name="author" content="Govorov Andrew">
+
+	<link rel="stylesheet" href="../../../assets/styles/styles.css">
+	
+	<!-- Prism.js CSS -->
+	<link rel="stylesheet" href="../../../assets/styles/prism.css">
+</head>
+
+<body>
+	<div class="container">
+		<!-- Сайдбар с деревом страниц -->
+		<aside class="sidebar">
+			<div class="sidebar-tree">
+				<div class="tree-header">Дерево страниц</div>
+				<div class="tree-item">
+					<div class="tree-folder">
+						<span class="tree-folder-icon">📁</span>
+						<span class="tree-folder-name">Говоров Андрей Сергеевич</span>
+					</div>
+					<div class="tree-children">
+						<div class="tree-item">
+							<a href="../../../pages/govorov/about.html" class="tree-link">Обо мне</a>
+						</div>
+						<div class="tree-item">
+							<a href="../../../pages/govorov/cv.html" class="tree-link">Резюме</a>
+						</div>
+					</div>
+				</div>
+				<div class="tree-item">
+					<div class="tree-folder">
+						<span class="tree-folder-icon">📁</span>
+						<span class="tree-folder-name">Портфолио</span>
+					</div>
+					<div class="tree-children">
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">Требования</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/requirements/rfilters.html" class="tree-link">Требования к фильтрации событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">Спецификации</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/specifications/sfilters.html" class="tree-link">Спецификация. Фильтрация событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">База данных</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/events_groups.html" class="tree-link">Группы событий</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/event_types.html" class="tree-link">Типы событий</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/database/event_types_groups.html" class="tree-link">Группы-типы событий</a>
+								</div>
+							</div>
+						</div>
+						<div class="tree-item">
+							<div class="tree-folder">
+								<span class="tree-folder-icon">📁</span>
+								<span class="tree-folder-name">REST API</span>
+							</div>
+							<div class="tree-children">
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/postevents.html" class="tree-link">POST api/v3/events</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/getfilters.html" class="tree-link active">GET api/v3/events/filters</a>
+								</div>
+								<div class="tree-item">
+									<a href="../../../pages/portofolio/api/postdays.html" class="tree-link">POST api/v3/events/days</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		
+		<!-- Основной контент -->
+		<main class="main-content">
+			<h1 id="section-1">GET api/v3/events/filters</h1>
+			<!-- Оглавление статьи -->
+			<nav class="article-toc" id="articleToc">
+				<div class="toc-header">На этой странице</div>
+				<ul class="toc-list" id="toc">
+					<!-- Оглавление генерируется автоматически -->
+				</ul>
+			</nav>
+
+			<!-- Контент статьи -->
+			<article class="content">
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	История изменений																										-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-2">История изменений</h1>
+				<div>
+					<!-- Таблица истории изменений -->
+					<table class="confluence-table">
+						<caption>История изменений метода</caption>
+						<thead>
+							<tr>
+								<th>Версия</th>
+								<th>Автор</th>
+								<th>Дата изменений</th>
+								<th>Описание изменений</th>
+								<th>Ссылка на задачу</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>v.1.0</td>
+								<td><a href="../../../pages/govorov/about.html">Говоров Андрей</a></td>
+								<td>24.05.2023</td>
+								<td>
+									<p>Исходная страница</p>
+								</td>
+								<td>
+									<div class="jira-issue-container">
+										<span class="jira-issue">
+											<a href="https://jira.example.com/browse/B2C-29761" class="jira-issue-key" target="_blank">
+												<span class="jira-icon">📋</span>
+												<span style="color: white;">B2C-29761</span>
+											</a>
+											-
+											<span class="jira-summary">
+												[back] Реализовать метод запроса типов фильтров для раздела "События"
+											</span>
+											<span class="jira-status jira-status-published">
+												ОПУБЛИКОВАНО
+											</span>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>v.1.1</td>
+								<td><a href="../../../pages/govorov/about.html">Говоров Андрей</a></td>
+								<td>16.08.2023</td>
+								<td>
+									<p>Исходный вариант не масштабируем.</p>
+									<p>Изменение структуры ответа.</p>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>v.1.2</td>
+								<td><a href="../../../pages/govorov/about.html">Говоров Андрей</a></td>
+								<td>14.06.2024</td>
+								<td>
+									<p>Изменение названий событий</p>
+								</td>
+								<td>
+									<div class="jira-issue-container">
+										<span class="jira-issue">
+											<a href="https://jira.example.com/browse/B2C-36337" class="jira-issue-key" target="_blank">
+												<span class="jira-icon">📋</span>
+												<span style="color: white;">B2C-36337</span>
+											</a>
+											-
+											<span class="jira-summary">
+												[back] Изменить названия событий
+											</span>
+											<span class="jira-status jira-status-published">
+												ОПУБЛИКОВАНО
+											</span>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Метод																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-3">Метод</h1>
+				<div>
+					<table class="confluence-table">
+						<tbody>
+							<tr>
+								<th>Назначение</th>
+								<td>Запрос типов фильтров</td>
+							</tr>
+							<tr>
+								<th>Статус</th>
+								<td>ACTIVE</td>
+							</tr>
+							<tr>
+								<th>HTTP-метод</th>
+								<td>GET</td>
+							</tr>
+							<tr>
+								<th>URL</th>
+								<td>api/v3/events/filters</td>
+							</tr>
+							<tr>
+								<th>Swagger</th>
+								<td><a href="https://app.swaggerhub.com/apis/OmniChat9/Filters/3.0.0#/Events/get_events_filters" target="_blank">get_events_filters</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Запрос																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-4">Запрос</h1>
+				<div>
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Параметры запроса																									-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-5">Параметры запроса</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th>Название параметра</th>
+									<th>Описание</th>
+									<th>Тип</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия параметра</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="5">Отсутствуют</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Тело запроса																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-6">Тело запроса</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th>Название параметра</th>
+									<th>Описание</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия параметра</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="4">Отсутствуют</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Пример запроса																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-7">Пример запроса</h2>
+					<div>
+						<p>Отсутствует</p>
+					</div>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Ответ																													-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-8">Ответ</h1>
+				<div>
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Код успешного ответа																								-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-9">Код успешного ответа</h2>
+					<div>
+						<table class="confluence-table">
+							<tbody>
+								<tr>
+									<th>200</th>
+									<td>ОК</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Структура ответа																									-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-10">Структура ответа</h2>
+					<div>
+						<table class="confluence-table">
+							<thead>
+								<tr>
+									<th colspan="4">Название элемента</th>
+									<th>Описание</th>
+									<th>Формат</th>
+									<th>Допустимость отсутствия элемента</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="4">filters</td>
+									<td>Объект для передачи фильтров</td>
+									<td>Object</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td colspan="3">{filter_type}</td>
+									<td>Объект для передачи опций фильтра</td>
+									<td>Object</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td colspan="2">enabled</td>
+									<td>Доступность фильтра</td>
+									<td>Boolean</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td colspan="2">content</td>
+									<td>Массив для передачи значений фильтра</td>
+									<td>Array</td>
+									<td>Да</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>id</td>
+									<td>Идентификатор значения фильтра</td>
+									<td>Int</td>
+									<td>Нет</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>name</td>
+									<td>Наименование значения фильтра</td>
+									<td>Varchar</td>
+									<td>Нет</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<!------------------------------------------------------------------------------------------------------------------------>
+						<!--	Список фильтров																									-->
+						<!------------------------------------------------------------------------------------------------------------------------>
+						<h3 id="section-11">Список фильтров</h3>
+						<div>
+							<ul>
+								<li>groups - группы событий;</li>
+								<li>event_types - типы событий;</li>
+								<li>devices - устройства.</li>
+							</ul>
+						</div>
+					</div>
+
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<!--	Пример ответа																										-->
+					<!---------------------------------------------------------------------------------------------------------------------------->
+					<h2 id="section-12">Пример ответа</h2>
+					<div>
+						<!-- Блок кода JSON -->
+						<div class="code-container">
+							<div class="code-header">
+								<span class="code-title">Ответ на запрос GET api/v3/events/filters</span>
+								<div class="code-language">JSON</div>
+							</div>
+							<div>
+								<pre><code class="language-json">
+									{
+										"filters": {
+											"groups": {
+												"content": [
+													{"id": 1, "name": "Учётная запись"},
+													{"id": 2, "name": "Устройства"},
+													{"id": 3, "name": "Камеры"},
+													{"id": 4, "name": "Мой дом"}
+													{"id": 5, "name": "Мои сценарии"},
+													{"id": 6, "name": "Баланс и услуги"},
+												],
+												"enabled": true
+											},
+											"event_types": {
+												"enabled": true,
+												"content": [
+													{"id": 13, "name": "Движение"},
+													{"id": 14, "name": "Перекрытие обзора"},
+													{"id": 15, "name": "Пересечение линии"},
+													{"id": 18, "name": "Звук"},
+													{"id": 23, "name": "Камера не в сети"},
+													{"id": 24, "name": "Камера в сети"}
+												]
+											},
+											"devices": {
+												"enabled": true
+											}
+										}
+									}
+								</code></pre>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Возможные ошибки																										-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-13">Возможные ошибки</h1>
+				<div>
+					<!-- Блок примечания -->
+					<div class="confluence-macro info">
+						<div class="macro-icon">💡</div>
+						<div class="macro-content">
+							<strong>Информация</strong>
+							<p>Полный список ошибок: <a href="">Коды ошибок</a></p>
+						</div>
+					</div>
+					<p>Специализированные ошибки для данного метода отсутствуют.</p>
+				</div>
+
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<!--	Логика работы																											-->
+				<!-------------------------------------------------------------------------------------------------------------------------------->
+				<h1 id="section-14">Логика работы</h1>
+				<div>
+					<div class="complex-algorithm">
+						<ol class="algorithm-list level-1">
+							<li>
+								<span class="algorithm-text">Бэк получает запрос <strong>GET api/v3/events/filters</strong> от Фронта</span>
+							</li>
+							<li>
+								<span class="algorithm-text">Бэк обращается к сущности БД <strong>events_groups</strong>:</span>
+								<ol class="algorithm-list level-2">
+									<li>
+										<span class="algorithm-text">Если таблица <strong>events_groups</strong> пустая, или в join-таблице <strong>event_type_groups</strong> отсутствуют актуальные связи с таблицей <strong>event_types</strong>, то в ответе указывается:</span>
+										<ol class="algorithm-list level-3">
+											<li>
+												<span class="algorithm-text"><code>filters.groups.enabled = false</code></span>
+											</li>
+											<li>
+												<span class="algorithm-text"><code>filters.groups.content[]</code> - отсутствует</span>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<span class="algorithm-text">Если таблица <strong>events_groups</strong> заполнена, а в join-таблице <strong>event_type_groups</strong> есть актуальные связи с таблицей <strong>event_types</strong>, то в ответе указывается:</span>
+										<ol class="algorithm-list level-3">
+											<li>
+												<span class="algorithm-text"><code>filters.groups.enabled = true</code></span>
+											</li>
+											<li>
+												<span class="algorithm-text"><code>filters.groups.content[]</code> - наполняется значениями из таблицы <strong>events_groups</strong></span>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</li>
+							<li>
+								<span class="algorithm-text">Бэк проверяет есть ли устройства, камеры или контроллеры у пользователя</span>
+								<ol class="algorithm-list level-2">
+									<li>
+										<span class="algorithm-text">Если устройства отсутствуют, то в ответе указывается <code>filters.devices.enabled = false</code></span>
+									</li>
+									<li>
+										<span class="algorithm-text">Если есть хотя бы одно устройство, то в ответе указывается <code>filters.devices.enabled = true</code></span>
+									</li>
+								</ol>
+							</li>
+							<li>
+								<span class="algorithm-text">Бэк проверяет есть ли камеры у пользователя</span>
+								<ol class="algorithm-list level-2">
+									<li>
+										<span class="algorithm-text">Если таблица <strong>event_types</strong> пустая, или нет ни одной записи для которых выполняются условия <code>origin_class = Device::Camera && filter_name != null</code>, то в ответе указывается:</span>
+										<ol class="algorithm-list level-3">
+											<li>
+												<span class="algorithm-text"><code>filters.event_types.enabled = false</code></span>
+											</li>
+											<li>
+												<span class="algorithm-text"><code>filters.event_types.content[]</code> - отсутствует</span>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<span class="algorithm-text">Если у пользователя не подключено ни одной камеры, то в ответе указывается:</span>
+										<ol class="algorithm-list level-3">
+											<li>
+												<span class="algorithm-text"><code>filters.event_types.enabled = false</code></span>
+											</li>
+											<li>
+												<span class="algorithm-text"><code>filters.event_types.content[]</code> - отсутствует</span>
+											</li>
+										</ol>
+									</li>
+									<li>
+										<span class="algorithm-text">Если у пользователя подключена хотя бы одна камера, то в ответе в объекте event_types указывается:</span>
+										<ol class="algorithm-list level-3">
+											<li>
+												<span class="algorithm-text"><code>filters.event_types.enabled = true</code></span>
+											</li>
+											<li>
+												<span class="algorithm-text">Чтобы заполнить filters.event_types.content[] Бэк обращается к таблице БД <strong>events_types</strong>, находит все записи, для которых выполняются условия (<code>origin_class = ::Camera && filter_name != null</code>) и наполняет значениями массив <code>filters.event_types.content[]</code> с учётом следующих условий при проверке всех камер в таблице БД <strong>devices</strong>:</span>
+												<ol class="algorithm-list level-4">
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.motion_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Движение"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.sound_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Звук"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.line_crossing_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Пересечение линии"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.face_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Обнаружение лиц"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.tampering_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Перекрытие обзора"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text">Если хотя бы у одной из камер <code>data.caps.human_detection = true</code>, то в ответе в <code>filters.event_types.content[]</code> добавляется <code>{"id": xx, "name": "Человек в кадре"}</code></span>
+													</li>
+													<li>
+														<span class="algorithm-text"><code>{"id": xx, "name": "Камера не в сети"}</code> и <code>{"id": xx, "name": "Камера в сети"}</code> всегда добавляются в <code>filters.event_types.content[]</code></span>
+													</li>
+												</ol>
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</li>
+							<li>
+								<span class="algorithm-text">Бэк возвращает подготовленный ответ Фронту</span>
+							</li>
+						</ol>
+					</div>
+
+					<!-- Блок кода SQL -->
+					<div class="code-container">
+						<div class="code-header">
+							<span class="code-title">Запрос фильтров</span>
+							<div class="code-sql">SQL</div>
+						</div>
+						<div>
+							<pre><code class="language-sql">
+								WITH 
+								-- Проверка групп событий
+								groups_check AS (
+									SELECT 
+										COUNT(eg.id) > 0 AND COUNT(etg.event_type_id) > 0 AS groups_enabled
+									FROM events_groups eg
+									LEFT JOIN event_type_groups etg ON eg.id = etg.group_id
+									LEFT JOIN event_types et ON et.id = etg.event_type_id AND et.deleted_at IS NULL
+									WHERE eg.deleted_at IS NULL
+								),
+								-- Данные групп событий (если enabled = true)
+								groups_data AS (
+									SELECT 
+										eg.id,
+										eg.name,
+										eg.description
+									FROM events_groups eg
+									WHERE eg.deleted_at IS NULL
+								),
+								-- Проверка наличия устройств у пользователя
+								devices_check AS (
+									SELECT 
+										EXISTS(
+											SELECT 1 FROM devices 
+											WHERE user_id = :user_id AND deleted_at IS NULL
+											UNION ALL
+											SELECT 1 FROM cameras 
+											WHERE user_id = :user_id AND deleted_at IS NULL
+											UNION ALL  
+											SELECT 1 FROM controllers 
+											WHERE user_id = :user_id AND deleted_at IS NULL
+										) AS devices_enabled
+								),
+								-- Проверка наличия камер у пользователя
+								cameras_check AS (
+									SELECT 
+										EXISTS(
+											SELECT 1 FROM cameras 
+											WHERE user_id = :user_id AND deleted_at IS NULL
+										) AS has_cameras
+								),
+								-- Проверка типов событий для камер
+								event_types_base_check AS (
+									SELECT 
+										COUNT(*) > 0 AS has_event_types
+									FROM event_types et
+									WHERE et.origin_class = 'Device::Camera' 
+										AND et.filter_name IS NOT NULL
+										AND et.deleted_at IS NULL
+								),
+								-- Проверка возможностей камер пользователя
+								camera_capabilities AS (
+									SELECT 
+										BOOL_OR(COALESCE((data->'caps'->>'motion_detection')::boolean, false)) AS has_motion_detection,
+										BOOL_OR(COALESCE((data->'caps'->>'sound_detection')::boolean, false)) AS has_sound_detection,
+										BOOL_OR(COALESCE((data->'caps'->>'line_crossing_detection')::boolean, false)) AS has_line_crossing,
+										BOOL_OR(COALESCE((data->'caps'->>'face_detection')::boolean, false)) AS has_face_detection,
+										BOOL_OR(COALESCE((data->'caps'->>'tampering_detection')::boolean, false)) AS has_tampering,
+										BOOL_OR(COALESCE((data->'caps'->>'human_detection')::boolean, false)) AS has_human_detection
+									FROM cameras 
+									WHERE user_id = :user_id AND deleted_at IS NULL
+								),
+								-- Собираем типы событий для камер
+								event_types_data AS (
+									SELECT 
+										et.id,
+										et.name
+									FROM event_types et
+									WHERE et.origin_class = 'Device::Camera' 
+										AND et.filter_name IS NOT NULL
+										AND et.deleted_at IS NULL
+										AND (
+											(et.filter_name = 'motion_detection' AND (SELECT has_motion_detection FROM camera_capabilities)) OR
+											(et.filter_name = 'sound_detection' AND (SELECT has_sound_detection FROM camera_capabilities)) OR
+											(et.filter_name = 'line_crossing_detection' AND (SELECT has_line_crossing FROM camera_capabilities)) OR
+											(et.filter_name = 'face_detection' AND (SELECT has_face_detection FROM camera_capabilities)) OR
+											(et.filter_name = 'tampering_detection' AND (SELECT has_tampering FROM camera_capabilities)) OR
+											(et.filter_name = 'human_detection' AND (SELECT has_human_detection FROM camera_capabilities)) OR
+											et.filter_name IN ('camera_offline', 'camera_online')
+										)
+								)
+
+								-- Финальный результат
+								SELECT 
+									-- Группы событий
+									json_build_object(
+										'enabled', (SELECT groups_enabled FROM groups_check),
+										'content', CASE 
+											WHEN (SELECT groups_enabled FROM groups_check) THEN 
+												(SELECT COALESCE(json_agg(json_build_object(
+													'id', gd.id,
+													'name', gd.name,
+													'description', gd.description
+												)), '[]'::json) FROM groups_data gd)
+											ELSE NULL
+										END
+									) AS groups,
+									
+									-- Устройства
+									json_build_object(
+										'enabled', (SELECT devices_enabled FROM devices_check)
+									) AS devices,
+									
+									-- Типы событий
+									json_build_object(
+										'enabled', (
+											(SELECT has_event_types FROM event_types_base_check) AND 
+											(SELECT has_cameras FROM cameras_check)
+										),
+										'content', CASE 
+											WHEN (SELECT has_event_types FROM event_types_base_check) AND 
+													(SELECT has_cameras FROM cameras_check) THEN
+												(SELECT COALESCE(json_agg(json_build_object(
+													'id', etd.id,
+													'name', etd.name
+												)), '[]'::json) FROM event_types_data etd)
+											ELSE NULL
+										END
+									) AS event_types;
+							</code></pre>
+						</div>
+					</div>
+
+					<p><strong>Пояснения к запросу:</strong></p>
+					<ol>
+						<li><strong>CTE (Common Table Expressions)</strong> - использую временные представления для каждой проверки</li>
+						<li><strong>:user_id</strong> - параметр запроса, который нужно передать из бэкенда</li>
+						<li><strong>JSON построение</strong> - результат формируется в виде JSON структуры, готовой для отправки фронту</li>
+						<li><strong>Проверка capabilities камер</strong> - использую BOOL_OR для проверки, есть ли хотя бы одна камера с каждой capability</li>
+						<li><strong>Условия для event_types</strong> - фильтруем типы событий на основе capabilities камер пользователя</li>
+					</ol>
+				</div>
+			</article>
+		</main>
+	</div>
+
+	<!-- Кнопка "Вверх" -->
+	<button class="scroll-to-top" id="scrollToTop" aria-label="Вернуться к началу страницы"></button>
+	
+	<script src="../../../assets/scripts/prism.js"></script>
+	<script src="../../../assets/scripts/script.js"></script>
+</body>
+</html>

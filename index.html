@@ -1,59 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Документация с MD-включениями</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css" rel="stylesheet">
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .md-content { background: white; padding: 20px; border-radius: 8px; }
-        .md-container { margin: 20px 0; }
-    </style>
+    <meta http-equiv="refresh" content="0;URL=/sa-notes/pages/govorov/about.html">
 </head>
+
 <body>
-    <header>
-        <h1>Моя документация</h1>
-        <nav>
-            <a href="#main-content">Главная</a>
-            <a href="#api-docs">API</a>
-        </nav>
-    </header>
-
-    <main>
-        <div id="main-content" class="md-container">
-            <!-- MD-контент будет загружен сюда -->
-        </div>
-        
-        <div id="api-docs" class="md-container">
-            <!-- API документация будет здесь -->
-        </div>
-    </main>
-
-    <script>
-        // Функция загрузки и рендеринга MD
-        async function loadMarkdown(containerId, mdFile) {
-            try {
-                const response = await fetch(mdFile);
-                const markdown = await response.text();
-                const html = marked.parse(markdown);
-                document.getElementById(containerId).innerHTML = html;
-                
-                // Подсветка кода (опционально)
-                Prism.highlightAllUnder(document.getElementById(containerId));
-            } catch (error) {
-                console.error('Ошибка загрузки MD:', error);
-                document.getElementById(containerId).innerHTML = 
-                    '<p>Ошибка загрузки содержимого</p>';
-            }
-        }
-
-        // Загрузка контента при готовности DOM
-        document.addEventListener('DOMContentLoaded', function() {
-            loadMarkdown('main-content', 'content/main.md');
-            loadMarkdown('api-docs', 'content/api.md');
-        });
-    </script>
+    <p>If you are not being redirected to the start page please click <a href="/sa-notes/pages/govorov/about.html">here</a>.</p>
 </body>
 </html>
